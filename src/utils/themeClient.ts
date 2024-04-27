@@ -3,6 +3,10 @@ const colors = {
     gray: '#EDEBE8',
     white: '#FFF',
   },
+  border: {
+    gray: '#D4D4D4',
+    lightGray: '#A0A0A0',
+  },
 };
 const fonts = {
   size: {
@@ -29,6 +33,7 @@ const line = {
 };
 
 export const bgColor = colors.background;
+export const borderColor = colors.border;
 export const fontSize = fonts.size;
 export const fontWeight = fonts.weight;
 export const lineHeight = line.height;

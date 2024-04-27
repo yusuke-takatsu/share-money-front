@@ -1,3 +1,5 @@
+import { BasicSnackBar } from '@/components/snackBar/BasicSnackBar';
+import { useSnackBar } from '@/utils/hooks/useSnackbar';
 import { bgColor } from '@/utils/themeClient';
 import styled from '@emotion/styled';
 import React, { ReactNode } from 'react';
@@ -13,7 +15,16 @@ interface Props {
 }
 
 const AppTemplate = ({ children }: Props) => {
-  return <Root>{children}</Root>;
+  const { snackBar, closeSnackBar } = useSnackBar();
+
+  return (
+    <>
+      {snackBar.isOpen && (
+        <BasicSnackBar snackbar={snackBar} onClose={closeSnackBar} />
+      )}
+      <Root>{children}</Root>
+    </>
+  );
 };
 
 export default AppTemplate;
