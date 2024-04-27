@@ -1,5 +1,7 @@
+import { bgColor } from '@/utils/themeClient';
 import styled from '@emotion/styled';
 import React, { ReactNode } from 'react';
+import AuthCard from '../card/AuthCard';
 
 const Layout = styled('div')`
   display: grid;
@@ -11,7 +13,11 @@ interface Props {
 }
 
 const AuthLayout = ({ children }: Props) => {
-  return <Layout>test</Layout>;
+  return (
+    <Layout>
+      <AuthCard>{children}</AuthCard>
+    </Layout>
+  );
 };
 
 export default AuthLayout;
