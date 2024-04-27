@@ -1,0 +1,4 @@
+export const COOKIE_KEY_NAMES = {
+  XSRF_TOKEN: 'XSRF-TOKEN',
+  X_XSRF_TOKEN: 'X-XSRF-TOKEN',
+};
