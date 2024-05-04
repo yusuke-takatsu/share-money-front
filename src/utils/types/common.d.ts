@@ -10,3 +10,8 @@ type NextPageWithLayout = NextPage & {
 export type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
+
+export type OptionProps = {
+  value: number;
+  label: string;
+};

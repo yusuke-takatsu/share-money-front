@@ -1,36 +1,32 @@
+import React from 'react';
 import { useForm } from 'react-hook-form';
+import { ProfileRegisterForm, defaultValues, profileSchema } from './schema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoginForm, loginSchema, defaultValues } from './schema';
 import { useSetSanctumToken } from '@/features/api/setSanctumToken';
-import { useUserLogin } from '../../api/login';
-import { useRouter } from 'next/router';
+import { registerProfile } from '../api/registerProfile';
 
-export const useLogin = () => {
-  const router = useRouter();
-
+export const useProfile = () => {
   const { setSanctumToken } = useSetSanctumToken();
-  const { userLogin } = useUserLogin();
+  const { registerProf } = registerProfile();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>({
+  } = useForm<ProfileRegisterForm>({
     mode: 'onChange',
     defaultValues,
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(profileSchema),
   });
 
-  const onSubmit = async (data: LoginForm) => {
+  const onSubmit = async (data: ProfileRegisterForm) => {
     const isSunctumSuccess = await setSanctumToken();
 
     if (!isSunctumSuccess) return;
 
-    const isLoginSuccess = await userLogin(data);
+    const isLoginSuccess = await registerProf(data);
 
     if (!isLoginSuccess) return;
-
-    router.push('/profile/register');
   };
 
   return { register, handleSubmit, errors, onSubmit };

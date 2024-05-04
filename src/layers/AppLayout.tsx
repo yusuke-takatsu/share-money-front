@@ -1,12 +1,12 @@
 import AuthLayout from '@/components/Layouts/AuthLayout';
-import CustomLayout from '@/components/Layouts/CustomLayout';
+import { CustomLayout } from '@/components/Layouts/CustomLayout';
 import { PageLayoutType } from '@/utils/types/common';
 import React, { ReactNode } from 'react';
 
-interface Props  {
+interface Props {
   children: ReactNode;
   layout: PageLayoutType;
-};
+}
 
 const AppLayout = ({ children, layout }: Props) => {
   switch (layout) {

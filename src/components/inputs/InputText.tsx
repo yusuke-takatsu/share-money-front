@@ -4,7 +4,7 @@ import { UseFormRegisterReturn } from 'react-hook-form';
 import { bgColor, fontSize, fontWeight, lineHeight } from '@/utils/themeClient';
 import { useId } from 'react';
 
-const baseHeightPx = '31px';
+const baseHeightPx = '40px';
 
 const Wrapper = styled('div')<{ labelPosition?: 'top' | 'left' }>`
   display: ${({ labelPosition }) =>
@@ -46,7 +46,7 @@ const CustomTextField = styled(TextField)<{ placeholderColor?: string }>`
     border-radius: 4px;
     font-size: ${fontSize.sm};
     font-weight: ${fontWeight.normal};
-    line-height: ${lineHeight.md};
+    line-height: ${lineHeight.lg};
   }
 `;
 
