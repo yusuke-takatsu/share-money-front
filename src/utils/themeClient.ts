@@ -2,6 +2,7 @@ const colors = {
   background: {
     gray: '#EDEBE8',
     white: '#FFF',
+    rightRed: '#F9CFCF',
   },
   border: {
     gray: '#D4D4D4',
@@ -20,6 +21,9 @@ const fonts = {
     normal: '400',
     bold: '700',
   },
+  color: {
+    gray: '#D4D4D4',
+  },
 };
 
 const line = {
@@ -36,4 +40,5 @@ export const bgColor = colors.background;
 export const borderColor = colors.border;
 export const fontSize = fonts.size;
 export const fontWeight = fonts.weight;
+export const fontColor = fonts.color;
 export const lineHeight = line.height;
