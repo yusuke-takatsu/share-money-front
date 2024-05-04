@@ -1,11 +1,27 @@
 import React, { ReactNode } from 'react';
+import styled from '@emotion/styled';
+import { Header } from '@/components/header/Header';
 
-type Props = {
+const Wrapper = styled('div')`
+  padding-top: 75px;
+  padding-bottom: 75px;
+`;
+
+const Main = styled('main')`
+  position: relative;
+`;
+
+interface Props {
   children: ReactNode;
-};
+}
 
-const CustomLayout = ({ children }: Props) => {
-  return <div>テスト</div>;
+export const CustomLayout = ({ children }: Props) => {
+  return (
+    <>
+      <Header />
+      <Wrapper>
+        <Main>{children}</Main>
+      </Wrapper>
+    </>
+  );
 };
-
-export default CustomLayout;
