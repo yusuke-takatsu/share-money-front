@@ -30,7 +30,7 @@ export const useLogin = () => {
 
     if (!isLoginSuccess) return;
 
-    router.push('/mypage');
+    router.push('/profile/register');
   };
 
   return { register, handleSubmit, errors, onSubmit };
